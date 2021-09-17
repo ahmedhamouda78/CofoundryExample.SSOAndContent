@@ -53,7 +53,7 @@ namespace CofoundryExample.SSOAndContent
             // otherwise the ambient anonymous user will be used and a permission exception will be thrown
             var systemExecutionContext = await _executionContextFactory.CreateSystemUserExecutionContextAsync();
 
-            var existingUser = await _userRepository.GetUserMicroSummaryByEmailAsync(command.Email, MemberUserArea.AreaCode, systemExecutionContext);
+            var existingUser = await _userRepository.GetUserMicroSummaryByUsernameAsync(command.Username, MemberUserArea.AreaCode, systemExecutionContext);
             int userId;
 
             if (existingUser == null)
@@ -108,7 +108,8 @@ namespace CofoundryExample.SSOAndContent
         private AddUserCommand MapAddUserCommand(SignMemberInCommand command, RoleDetails role)
         {
             var addUserCommand = new AddUserCommand();
-            addUserCommand.Email = command.Email;
+            addUserCommand.Username = command.Username;
+            addUserCommand.Email = "Unknown";
             addUserCommand.FirstName = "Unknown";
             addUserCommand.LastName = "Unknown";
             addUserCommand.RoleId = role.RoleId;

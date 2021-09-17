@@ -33,7 +33,7 @@ namespace CofoundryExample.SSOAndContent
         /// I'll assume you have an email from your SSO provider but
         /// otherwise this can be false.
         /// </summary>
-        public bool UseEmailAsUsername { get { return true; } }
+        public bool UseEmailAsUsername { get { return false; } }
 
         /// <summary>
         /// The path to redirect the user to when not lgoged in.
