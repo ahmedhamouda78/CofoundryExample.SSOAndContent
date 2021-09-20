@@ -5,10 +5,10 @@ using System.Web;
 
 namespace CofoundryExample.SSOAndContent
 {
-    public class SignMemberInCommand
-    {
-        public string Username { get; set; }
+  public class SignMemberInCommand
+  {
+    public string Username { get; set; }
 
-        public string Password { get; set; }
-    }
+    public string Password { get; set; }
+  }
 }
